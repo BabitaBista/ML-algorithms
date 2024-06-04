@@ -14,7 +14,7 @@ def layer_size(X, Y):
     
     return input_size, hidden_size, output_size
 
-# initialise the weights and biases randomnly to enable symmetry breaking
+# initialise the weights and biases randomly to enable symmetry breaking
 def initialise_parameters(input_size, hidden_size, output_size):
 
     W1 = np.random.randn(hidden_size, input_size) * 0.01
@@ -119,7 +119,7 @@ def model(X, Y, hidden_size, epochs = 1000):
     input_size = layer_size(X, Y)[0]
     output_size = layer_size(X, Y)[2]
 
-    # intialse the weights
+    # initialise the weights
     parameters = initialise_parameters(input_size, hidden_size, output_size)
 
     # train the model
@@ -130,7 +130,7 @@ def model(X, Y, hidden_size, epochs = 1000):
         grads = backprop(parameters, cache, X, Y)
         parameters = update_params(parameters, grads)
         
-        # Print the cost every 1000 iterations
+        # Print cost every 1000 iterations
         print ("Cost after iteration %i: %f" %(i, cost))
 
     return parameters
